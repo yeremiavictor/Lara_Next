@@ -49,8 +49,8 @@ function PostIndex(props) {
                                                 <td>{post.content}</td>
                                                 <td className="text-center">
                                                     <Link href={`/posts/edit/${post.id}`}>
-                                                        <button className="btn btn-sm btn-warning border-0 shadow-sm mb-3 me-3">Edit</button>
                                                     </Link>
+                                                    <button className="btn btn-sm btn-warning border-0 shadow-sm mb-3 me-3">Edit</button>
                                                     <button className="btn btn-sm btn-danger border-0 shadow-sm mb-3 me-3">Delete</button>
                                                 </td>
                                             </tr>
