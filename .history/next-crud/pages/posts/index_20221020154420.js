@@ -31,8 +31,8 @@ function PostIndex(props) {
 
     //function 'deletePost'
     const deletePost = async(id) => {
-        //sending
-        await axios.delete(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/posts/${id}`)
+        //sedning
+        await axios delete(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/posts/${id}`);
 
         //refresh data
         refreshData();
@@ -69,7 +69,7 @@ function PostIndex(props) {
                                                     <Link href={`/posts/edit/${post.id}`}>
                                                         <button className="btn btn-sm btn-warning border-0 shadow-sm mb-3 me-3">Edit</button>
                                                     </Link>
-                                                    <button  onClick={() => deletePost(post.id)} className="btn btn-sm btn-danger border-0 shadow-sm mb-3 me-3">Delete</button>
+                                                    <button className="btn btn-sm btn-danger border-0 shadow-sm mb-3 me-3">Delete</button>
                                                 </td>
                                             </tr>
                                         ))}
