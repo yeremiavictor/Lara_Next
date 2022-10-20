@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Post;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\PostResource;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
@@ -24,6 +25,9 @@ class PostController extends Controller
         //return collection of posts as a resource
         return new PostResource(true, 'List Data Postss', $posts);
      }
+
+
+
 
      /**
       * store
@@ -60,6 +64,9 @@ class PostController extends Controller
          return new PostResource(true, 'Data Post Berhasil Ditambahkan', $post);
 
       }
+
+
+
       /**
        * 
        * @param mixed $post
@@ -70,6 +77,9 @@ class PostController extends Controller
          //return single post as a resource
          return new PostResource(true, 'Data Post Ditemukan', $post);
       }
+
+
+
 
       /**
        * update
@@ -119,4 +129,26 @@ class PostController extends Controller
          //return response
          return new PostResource(true, 'Data Post Berhasil Diubah!', $post);
        }
+
+
+
+
+       /**
+        * destroy
+        * @param mixed $post
+        * @return void
+      */
+
+        public function destroy(Post $post)
+        {
+         //delete image
+         Storage::delete('public/posts/'.$post->image);
+
+         //delete post
+         $post->delete();
+
+         //return response
+         return new PostResource(true, 'Data post berhasil dihapus', null);
+
+      }
 }
