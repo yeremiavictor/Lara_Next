@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Navbar(){
     return(
         <header>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark fixed-top border-0 shadow-sm">
+            <nav className="navbar navbar-expand-md navbar-dark fixed-top border-0 shadow-sm">
                 <div className="container">
                     <Link href='/'>
                         <a className="navbar-brand"> Laravel X NextJS</a>
@@ -16,7 +16,7 @@ function Navbar(){
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav me-auto mb-2 mb-md-0">
                             <li className="nav-item">
-                                 <a className="nav-link" href='/posts'>POST</a>
+                                <Link href='/posts'> <a className="nav-link">POST</a></Link>
                             </li>
                         </ul>
                         <form className="d-flex">
